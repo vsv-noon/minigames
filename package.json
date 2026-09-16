@@ -1,0 +1,39 @@
+{
+  "name": "minigames",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix",
+    "lint-staged": "lint-staged",
+    "format:fix": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky && chmod ug+x .husky/*"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{scss,css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.70.0",
+    "@typescript-eslint/parser": "^8.70.0",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.7",
+    "sass": "^1.104.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
