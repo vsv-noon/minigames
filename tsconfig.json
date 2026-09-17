@@ -20,7 +20,7 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "strict": true,
-    "noImplicitAny": true,
+    "noImplicitAny": true
   },
   "include": ["src"]
 }

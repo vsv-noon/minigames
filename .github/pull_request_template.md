@@ -4,6 +4,7 @@
 3. Deployment: https://chakapega-fancy-weather.netlify.com/
 4. Done 20.09.2026 / deadline 20.09.2026
 5. Score: 220 / 300
+
 - Markup, design, UI (15/30)
   - [x] minimum page width at which it is displayed correctly – 320 рх (10)
   - [±] application's appearance corresponds to the layout and/or its improved version (5/10)
