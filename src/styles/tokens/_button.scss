@@ -1,8 +1,8 @@
-@use '../functions';
+@use '../functions' as *;
 
 :root {
-  --btn-large-padding: rem(24px) rem(16px);
-  --btn-medium-padding: rem(20px) rem(10px);
-  --btn-small-padding: rem(16px) rem(8px);
-  --btn-icon-padding: rem(8px);
+  --btn-large-padding: #{rem(24px)} #{rem(16px)};
+  --btn-medium-padding: #{rem(20px)} #{rem(10px)};
+  --btn-small-padding: #{rem(16px)} #{rem(8px)};
+  --btn-icon-padding: #{rem(8px)};
 }

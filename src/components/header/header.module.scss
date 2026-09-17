@@ -1,0 +1,25 @@
+.header {
+  margin: 0 auto;
+  padding: var(--size-3) var(--size-10);
+  max-width: $breakpoint-desktop;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--size-1);
+  font-family: var(--font-inter);
+  font-weight: var(--weight-bold);
+  font-size: var(--display-small);
+
+  .logoImg {
+    height: 30px;
+  }
+}
+
+.list {
+  display: flex;
+}
