@@ -7,3 +7,11 @@
 @use './tokens/font';
 @use './tokens/shadow';
 @use './tokens/size';
+
+#app {
+  height: 100vh;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $breakpoint-desktop;
+  background-color: var(--bg);
+}

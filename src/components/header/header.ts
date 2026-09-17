@@ -46,10 +46,30 @@ export function Header(): HTMLElement {
     list.append(listItem);
   }
 
+  const actions = document.createElement('div');
+  actions.className = styles.actions;
+
+  const loginButton = document.createElement('button');
+  loginButton.type = 'button';
+  loginButton.className = styles.loginButton;
+  loginButton.textContent = 'Log In';
+
+  const signUpButton = document.createElement('button');
+  signUpButton.type = 'button';
+  signUpButton.className = styles.signUpButton;
+  signUpButton.textContent = 'Sign Up';
+
+  const navContainer = document.createElement('div');
+  navContainer.classList = styles.navContainer;
+
+  navContainer.append(nav, actions);
+
+  actions.append(loginButton, signUpButton);
+
   logo.append(logoImg, logoText);
   nav.append(list);
 
-  header.append(logo, nav);
+  header.append(logo, navContainer);
 
   return header;
 }

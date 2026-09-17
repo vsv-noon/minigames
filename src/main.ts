@@ -9,4 +9,4 @@ if (!app) {
 
 const header = Header();
 
-app.before(header);
+app.append(header);

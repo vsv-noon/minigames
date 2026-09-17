@@ -1,10 +1,14 @@
+@use '/src/styles/media' as *;
+
 .header {
-  margin: 0 auto;
+  width: 100%;
   padding: var(--size-3) var(--size-10);
-  max-width: $breakpoint-desktop;
+
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  background-color: var(--bg);
 }
 
 .logo {
@@ -22,17 +26,60 @@
 
 .nav {
   display: flex;
+  .list {
+    display: flex;
+    gap: var(--size-5);
+
+    a {
+      text-decoration: none;
+      font-family: var(--font-inter);
+      font-weight: var(--weight-bold);
+      font-size: var(--label-extra-large);
+      color: var(--on-bg);
+      transition: all 0.3s ease-in-out;
+
+      @include hover {
+        color: var(--on-primary);
+      }
+    }
+  }
 }
 
-.list {
+.navContainer {
   display: flex;
-  gap: var(--size-5);
+  align-items: center;
+  gap: var(--size-3);
+}
 
-  a {
-    text-decoration: none;
+.actions {
+  display: flex;
+  gap: var(--size-2);
+
+  button {
     font-family: var(--font-inter);
     font-weight: var(--weight-medium);
-    font-size: var(--body-medium);
+    font-size: var(--label-large);
     color: var(--on-bg);
+    padding: var(--btn-extra-small-padding);
+    border: var(--size-025) solid var(--on-primary);
+    border-radius: var(--corner-small);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .loginButton {
+    background-color: var(--bg);
+
+    @include hover {
+      background-color: var(--surface);
+    }
+  }
+
+  .signUpButton {
+    background-color: var(--primary);
+
+    @include hover {
+      background-color: var(--primary-high);
+    }
   }
 }

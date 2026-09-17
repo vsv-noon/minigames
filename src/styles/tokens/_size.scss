@@ -1,6 +1,7 @@
 @use './../functions' as *;
 
 :root {
+  --size-025: #{rem(2px)};
   --size-05: #{rem(4px)};
   --size-1: #{rem(8px)};
   --size-2: #{rem(16px)};
