@@ -20,6 +20,19 @@
   }
 }
 
+.nav {
+  display: flex;
+}
+
 .list {
   display: flex;
+  gap: var(--size-5);
+
+  a {
+    text-decoration: none;
+    font-family: var(--font-inter);
+    font-weight: var(--weight-medium);
+    font-size: var(--body-medium);
+    color: var(--on-bg);
+  }
 }
