@@ -1,0 +1,7 @@
+@use '../functions';
+
+:root {
+  --shadow-level-1: rem(4px) rem(4px) var(--on-primary);
+  --shadow-level-2: rem(6px) rem(6px) var(--on-primary);
+  --shadow-level-3: rem(8px) rem(8px) var(--on-primary);
+}
