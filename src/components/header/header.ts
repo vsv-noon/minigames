@@ -1,3 +1,4 @@
+import { createBurgerButton } from '@/components/burger-menu/burger-menu';
 import styles from './header.module.scss';
 import logoUrl from '@/assets/images/brand-logo.svg';
 
@@ -13,7 +14,7 @@ const navigationItems: NavigationItem[] = [
   { label: 'Community', href: '#community' },
 ];
 
-export function Header(): HTMLElement {
+export function createHeader(): HTMLElement {
   const header = document.createElement('header');
   header.className = styles.header;
 
@@ -62,7 +63,8 @@ export function Header(): HTMLElement {
   const navContainer = document.createElement('div');
   navContainer.classList = styles.navContainer;
 
-  navContainer.append(nav, actions);
+  const burger = createBurgerButton();
+  navContainer.append(nav, actions, burger);
 
   actions.append(loginButton, signUpButton);
 

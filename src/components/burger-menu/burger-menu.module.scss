@@ -1,0 +1,49 @@
+@use '/src/styles/media' as media;
+@use '/src/styles/variables' as breakpoints;
+
+.burgerButton {
+  display: none;
+  position: relative;
+  height: var(--size-4);
+  width: var(--size-4);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-05);
+  line-height: var(--size-5);
+  border: var(--size-025) solid var(--on-primary);
+  border-radius: var(--corner-small);
+  cursor: pointer;
+
+  .line {
+    display: block;
+    width: 65%;
+    height: var(--size-025);
+    background: var(--on-primary);
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  @include media.hover {
+    background-color: var(--surface);
+  }
+
+  @include media.down(breakpoints.$breakpoint-tablet) {
+    display: flex;
+  }
+}
+.isOpen {
+  .line:nth-child(1) {
+    transform: translateY(var(--size-burger)) rotate(45deg);
+  }
+
+  .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .line:nth-child(3) {
+    transform: translateY(var(--size--burger)) rotate(-45deg);
+  }
+}

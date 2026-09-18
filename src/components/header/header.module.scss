@@ -1,4 +1,6 @@
 @use '/src/styles/media' as *;
+// @use '/src/styles/media' as media;
+@use '/src/styles/variables' as breakpoints;
 
 .header {
   width: 100%;
@@ -9,77 +11,101 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--bg);
-}
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--size-1);
-  font-family: var(--font-inter);
-  font-weight: var(--weight-bold);
-  font-size: var(--display-small);
-
-  .logoImg {
-    height: 30px;
+  @include down(breakpoints.$breakpoint-tablet) {
+    padding: var(--size-2) var(--size-5);
   }
-}
 
-.nav {
-  display: flex;
-  .list {
+  .logo {
     display: flex;
-    gap: var(--size-5);
+    align-items: center;
+    gap: var(--size-1);
+    font-family: var(--font-inter);
+    font-weight: var(--weight-bold);
+    font-size: var(--headline-medium);
 
-    a {
-      text-decoration: none;
-      font-family: var(--font-inter);
-      font-weight: var(--weight-bold);
-      font-size: var(--label-extra-large);
-      color: var(--on-bg);
-      transition: all 0.3s ease-in-out;
+    .logoImg {
+      height: 30px;
+    }
 
-      @include hover {
-        color: var(--on-primary);
+    @include down(breakpoints.$breakpoint-tablet) {
+      gap: var(--size-1);
+      font-size: var(--headline-small);
+    }
+  }
+
+  .navContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3);
+
+    @include down(breakpoints.$breakpoint-tablet) {
+      gap: var(--size-2);
+    }
+
+    .nav {
+      display: flex;
+      .list {
+        display: flex;
+        gap: var(--size-5);
+
+        a {
+          text-decoration: none;
+          font-family: var(--font-inter);
+          font-weight: var(--weight-bold);
+          font-size: var(--label-extra-large);
+          color: var(--on-bg);
+          transition: all 0.3s ease-in-out;
+
+          @include hover {
+            color: var(--on-primary);
+          }
+        }
       }
     }
-  }
-}
 
-.navContainer {
-  display: flex;
-  align-items: center;
-  gap: var(--size-3);
-}
+    .actions {
+      display: flex;
+      gap: var(--size-2);
 
-.actions {
-  display: flex;
-  gap: var(--size-2);
+      button {
+        font-family: var(--font-inter);
+        font-weight: var(--weight-medium);
+        font-size: var(--label-large);
+        color: var(--on-bg);
+        padding: var(--btn-extra-small-padding);
+        border: var(--size-025) solid var(--on-primary);
+        border-radius: var(--corner-small);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
 
-  button {
-    font-family: var(--font-inter);
-    font-weight: var(--weight-medium);
-    font-size: var(--label-large);
-    color: var(--on-bg);
-    padding: var(--btn-extra-small-padding);
-    border: var(--size-025) solid var(--on-primary);
-    border-radius: var(--corner-small);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
+        @include down(breakpoints.$breakpoint-tablet) {
+          padding: var(--btn-small-768-padding);
+        }
+      }
 
-  .loginButton {
-    background-color: var(--bg);
+      .loginButton {
+        background-color: var(--bg);
 
-    @include hover {
-      background-color: var(--surface);
+        @include hover {
+          background-color: var(--surface);
+        }
+      }
+
+      .signUpButton {
+        background-color: var(--primary);
+
+        @include hover {
+          background-color: var(--primary-high);
+        }
+      }
     }
-  }
 
-  .signUpButton {
-    background-color: var(--primary);
-
-    @include hover {
-      background-color: var(--primary-high);
+    @include down(breakpoints.$breakpoint-tablet) {
+      .nav,
+      .loginButton {
+        display: none;
+      }
     }
   }
 }

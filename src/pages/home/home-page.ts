@@ -1,6 +1,6 @@
 import styles from './home-page.module.scss';
 
-export function Home(): HTMLElement {
+export function createHomePage(): HTMLElement {
   const page = document.createElement('main');
 
   page.className = styles.home;
