@@ -1,25 +1,25 @@
 @use '@fontsource-variable/inter';
 @use '@fontsource-variable/roboto';
-@use '../functions';
+@use '../functions' as *;
 
 :root {
   //size
-  --display-large: rem(56px);
-  --display-medium: rem(36px);
-  --display-small: rem(24px);
+  --display-large: #{rem(56px)};
+  --display-medium: #{rem(36px)};
+  --display-small: #{rem(24px)};
 
-  --headline-large: rem(32px);
-  --headline-medium: rem(24px);
-  --headline-small: rem(20px);
+  --headline-large: #{rem(32px)};
+  --headline-medium: #{rem(24px)};
+  --headline-small: #{rem(20px)};
 
-  --body-large: rem(18px);
-  --body-medium: rem(16px);
-  --body-small: rem(14px);
+  --body-large: #{rem(18px)};
+  --body-medium: #{rem(16px)};
+  --body-small: #{rem(14px)};
 
-  --label-extra-large: rem(16px);
-  --label-large: rem(14px);
-  --label-medium: rem(12px);
-  --label-small: rem(10px);
+  --label-extra-large: #{rem(16px)};
+  --label-large: #{rem(14px)};
+  --label-medium: #{rem(12px)};
+  --label-small: #{rem(10px)};
 
   //weight
   --weight-regular: 400;

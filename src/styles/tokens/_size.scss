@@ -1,20 +1,23 @@
-@use '../functions';
+@use './../functions' as *;
 
 :root {
-  --size-05: rem(4px);
-  --size-1: rem(8px);
-  --size-2: rem(16px);
-  --size-3: rem(24px);
-  --size-4: rem(32px);
-  --size-5: rem(40px);
-  --size-6: rem(48px);
-  --size-7: rem(56px);
-  --size-8: rem(64px);
-  --size-9: rem(72px);
-  --size-10: rem(80px);
-  --size-11: rem(88px);
-  --size-12: rem(96px);
-  --size-13: rem(104px);
-  --size-14: rem(112px);
-  --size-15: rem(120px);
+  --size-025: #{rem(2px)};
+  --size-05: #{rem(4px)};
+  --size-1: #{rem(8px)};
+  --size-2: #{rem(16px)};
+  --size-3: #{rem(24px)};
+  --size-4: #{rem(32px)};
+  --size-5: #{rem(40px)};
+  --size-6: #{rem(48px)};
+  --size-7: #{rem(56px)};
+  --size-8: #{rem(64px)};
+  --size-9: #{rem(72px)};
+  --size-10: #{rem(80px)};
+  --size-11: #{rem(88px)};
+  --size-12: #{rem(96px)};
+  --size-13: #{rem(104px)};
+  --size-14: #{rem(112px)};
+  --size-15: #{rem(120px)};
+  --size-burger: #{rem(6px)};
+  --size--burger: #{rem(-6px)};
 }
