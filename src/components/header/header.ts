@@ -64,14 +64,19 @@ export function createHeader(): HTMLElement {
   navContainer.classList = styles.navContainer;
 
   const burger = createBurgerButton();
-  navContainer.append(nav, actions, burger);
+
+  burger.addEventListener('click', () => {
+    navContainer.classList.toggle(styles.isOpen);
+  });
+
+  navContainer.append(nav, actions);
 
   actions.append(loginButton, signUpButton);
 
   logo.append(logoImg, logoText);
   nav.append(list);
 
-  header.append(logo, navContainer);
+  header.append(logo, navContainer, burger);
 
   return header;
 }

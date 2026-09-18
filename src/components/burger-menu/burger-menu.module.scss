@@ -30,13 +30,19 @@
     background-color: var(--surface);
   }
 
-  @include media.down(breakpoints.$breakpoint-tablet) {
+  @include media.down(breakpoints.$breakpoint-upper-tablet) {
     display: flex;
   }
+
+  &.isOpen {
+    background: var(--bg-footer-low);
+  }
 }
+
 .isOpen {
   .line:nth-child(1) {
     transform: translateY(var(--size-burger)) rotate(45deg);
+    background: var(--white);
   }
 
   .line:nth-child(2) {
@@ -45,5 +51,6 @@
 
   .line:nth-child(3) {
     transform: translateY(var(--size--burger)) rotate(-45deg);
+    background: var(--white);
   }
 }

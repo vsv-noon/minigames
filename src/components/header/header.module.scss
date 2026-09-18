@@ -7,12 +7,11 @@
   padding: var(--size-3) var(--size-10);
 
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: var(--bg);
 
-  @include down(breakpoints.$breakpoint-tablet) {
+  @include down(breakpoints.$breakpoint-upper-tablet) {
     padding: var(--size-2) var(--size-5);
   }
 
@@ -23,12 +22,14 @@
     font-family: var(--font-inter);
     font-weight: var(--weight-bold);
     font-size: var(--headline-medium);
+    color: var(--on-primary);
+    z-index: 1;
 
     .logoImg {
       height: 30px;
     }
 
-    @include down(breakpoints.$breakpoint-tablet) {
+    @include down(breakpoints.$breakpoint-upper-tablet) {
       gap: var(--size-1);
       font-size: var(--headline-small);
     }
@@ -39,12 +40,13 @@
     align-items: center;
     gap: var(--size-3);
 
-    @include down(breakpoints.$breakpoint-tablet) {
+    @include down(breakpoints.$breakpoint-upper-tablet) {
       gap: var(--size-2);
     }
 
     .nav {
       display: flex;
+
       .list {
         display: flex;
         gap: var(--size-5);
@@ -69,6 +71,9 @@
       gap: var(--size-2);
 
       button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: var(--font-inter);
         font-weight: var(--weight-medium);
         font-size: var(--label-large);
@@ -79,7 +84,7 @@
         cursor: pointer;
         transition: all 0.3s ease-in-out;
 
-        @include down(breakpoints.$breakpoint-tablet) {
+        @include down(breakpoints.$breakpoint-upper-tablet) {
           padding: var(--btn-small-768-padding);
         }
       }
@@ -100,11 +105,75 @@
         }
       }
     }
+  }
 
-    @include down(breakpoints.$breakpoint-tablet) {
-      .nav,
-      .loginButton {
-        display: none;
+  @include down(breakpoints.$breakpoint-upper-tablet) {
+    .nav,
+    .loginButton {
+      display: none;
+    }
+
+    .navContainer {
+      position: fixed;
+      top: 0;
+      right: -100vw;
+      width: 100vw;
+      height: 100vh;
+      padding: var(--size-10) var(--size-3);
+      background: var(--bg-footer);
+      display: flex;
+      justify-content: space-between;
+      transition: all 0.3 ease-in-out;
+
+      &.isOpen {
+        flex-direction: column;
+        right: 0;
+
+        .loginButton {
+          display: block;
+        }
+
+        .nav {
+          width: 100%;
+          display: block;
+        }
+
+        .actions {
+          width: 100%;
+          flex-direction: column;
+
+          .loginButton {
+            border: var(--size-025) solid var(--white);
+            background-color: var(--bg-footer);
+
+            @include hover {
+              background-color: var(--surface);
+            }
+          }
+
+          .signUpButton {
+            color: var(--on-primary);
+            background-color: var(--primary);
+
+            @include hover {
+              background-color: var(--primary-high);
+            }
+          }
+        }
+
+        .list {
+          width: 100%;
+          flex-direction: column;
+          gap: var(--size-3);
+
+          a {
+            color: var(--on-bg-footer);
+
+            @include hover {
+              color: var(--primary);
+            }
+          }
+        }
       }
     }
   }
