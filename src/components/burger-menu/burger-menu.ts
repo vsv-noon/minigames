@@ -25,7 +25,7 @@ export function createBurgerButton(): HTMLButtonElement {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && button.classList.contains(styles.isOpen)) {
       button.classList.remove(styles.isOpen);
     }
   });

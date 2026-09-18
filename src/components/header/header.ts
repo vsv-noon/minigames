@@ -70,7 +70,10 @@ export function createHeader(): HTMLElement {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (
+      event.key === 'Escape' &&
+      navContainer.classList.contains(styles.isOpen)
+    ) {
       navContainer.classList.remove(styles.isOpen);
     }
   });
