@@ -69,6 +69,12 @@ export function createHeader(): HTMLElement {
     navContainer.classList.toggle(styles.isOpen);
   });
 
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      navContainer.classList.remove(styles.isOpen);
+    }
+  });
+
   navContainer.append(nav, actions);
 
   actions.append(loginButton, signUpButton);

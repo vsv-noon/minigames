@@ -24,5 +24,11 @@ export function createBurgerButton(): HTMLButtonElement {
     button.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
 
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      button.classList.remove(styles.isOpen);
+    }
+  });
+
   return button;
 }
